@@ -55,6 +55,57 @@ struct ContentView: View {
                         RoundedRectangle(cornerRadius: 30, style: .continuous)
                             .stroke(Color.white, lineWidth: 0.3)
                             .blendMode(.overlay))
+                    Button {
+                        print("tapped")
+                    } label: {
+                        GeometryReader { geometry in
+                            ZStack {
+                                AngularGradient(colors: [.pink, .purple, .orange], center: .center, angle: .degrees(0))
+                                    .blendMode(.overlay)
+                                    .blur(radius: 14)
+                                    .mask {
+                                        RoundedRectangle(cornerRadius: 30, style: .continuous)
+                                            .frame(height: 42)
+                                            .frame(maxWidth: geometry.size.width)
+                                            .blur(radius: 14)
+                                    }
+                                Text("Sign in")
+                                    .font(.headline.bold())
+                                    .foregroundColor(.white.opacity(0.7))
+                                    .frame(height: 42)
+                                    .frame(maxWidth: geometry.size.width)
+                                    .background(Color.pink.opacity(0.5))
+                                    .overlay(RoundedRectangle(cornerRadius: 30, style: .continuous)
+                                                .stroke(Color.white.opacity(0.2), lineWidth: 0.3)
+                                                .blendMode(.normal))
+                                    .cornerRadius(30)
+                            }
+                        }
+                        .frame(height: 42)
+                    }
+                    Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy.")
+                        .font(.footnote)
+                        .foregroundColor(.white.opacity(0.7))
+                    Rectangle()
+                        .frame(height: 1)
+                        .foregroundColor(.white.opacity(0.1))
+                    VStack(alignment: .leading, spacing: 16) {
+                        Button {
+                            print("switched")
+                        } label: {
+                            HStack {
+                                Text("Already have an account?")
+                                    .font(.footnote)
+                                    .foregroundColor(.white.opacity(0.7))
+                                Text("Sign in")
+                                    .font(.footnote.bold())
+                                    .gradientForeground(colors: [Color("pink-gradient-1"), Color("pink-gradient-2")])
+                            }
+                        }
+
+                    }
+                   
+                    
                 }
                 
                 .padding(20)
