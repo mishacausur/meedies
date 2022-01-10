@@ -13,6 +13,8 @@
 		B61A31CC278CB1040008D48F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61A31CB278CB1040008D48F /* Preview Assets.xcassets */; };
 		B61A31CE278CB1040008D48F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61A31CD278CB1040008D48F /* Persistence.swift */; };
 		B61A31D1278CB1040008D48F /* Meedies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B61A31CF278CB1040008D48F /* Meedies.xcdatamodeld */; };
+		B61A31DB278CB2DB0008D48F /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61A31DA278CB2DB0008D48F /* ImagePickerManager.swift */; };
+		B61A31DD278CB2F90008D48F /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61A31DC278CB2F90008D48F /* VisualEffectBlur.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		B61A31CB278CB1040008D48F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B61A31CD278CB1040008D48F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B61A31D0278CB1040008D48F /* Meedies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meedies.xcdatamodel; sourceTree = "<group>"; };
+		B61A31DA278CB2DB0008D48F /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
+		B61A31DC278CB2F90008D48F /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 		B61A31C3278CB1030008D48F /* Meedies */ = {
 			isa = PBXGroup;
 			children = (
+				B61A31D9278CB2C50008D48F /* Managers */,
 				B61A31C4278CB1030008D48F /* MeediesApp.swift */,
 				B61A31C6278CB1030008D48F /* ContentView.swift */,
 				B61A31C8278CB1040008D48F /* Assets.xcassets */,
@@ -71,6 +76,15 @@
 				B61A31CB278CB1040008D48F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B61A31D9278CB2C50008D48F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B61A31DA278CB2DB0008D48F /* ImagePickerManager.swift */,
+				B61A31DC278CB2F90008D48F /* VisualEffectBlur.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +158,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B61A31D1278CB1040008D48F /* Meedies.xcdatamodeld in Sources */,
+				B61A31DB278CB2DB0008D48F /* ImagePickerManager.swift in Sources */,
 				B61A31CE278CB1040008D48F /* Persistence.swift in Sources */,
+				B61A31DD278CB2F90008D48F /* VisualEffectBlur.swift in Sources */,
 				B61A31C7278CB1030008D48F /* ContentView.swift in Sources */,
 				B61A31C5278CB1030008D48F /* MeediesApp.swift in Sources */,
 			);
