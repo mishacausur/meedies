@@ -17,6 +17,7 @@
 		B61A31DD278CB2F90008D48F /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61A31DC278CB2F90008D48F /* VisualEffectBlur.swift */; };
 		B61A31E0278CC0A20008D48F /* GradientForeground.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61A31DF278CC0A20008D48F /* GradientForeground.swift */; };
 		B664A4B6278E0A6700A37B6C /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B664A4B5278E0A6700A37B6C /* ButtonComponent.swift */; };
+		B664A4B8278E0F3400A37B6C /* TextFiledComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B664A4B7278E0F3400A37B6C /* TextFiledComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		B61A31DC278CB2F90008D48F /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		B61A31DF278CC0A20008D48F /* GradientForeground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientForeground.swift; sourceTree = "<group>"; };
 		B664A4B5278E0A6700A37B6C /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+		B664A4B7278E0F3400A37B6C /* TextFiledComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFiledComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				B664A4B5278E0A6700A37B6C /* ButtonComponent.swift */,
+				B664A4B7278E0F3400A37B6C /* TextFiledComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				B61A31CE278CB1040008D48F /* Persistence.swift in Sources */,
 				B61A31E0278CC0A20008D48F /* GradientForeground.swift in Sources */,
 				B61A31DD278CB2F90008D48F /* VisualEffectBlur.swift in Sources */,
+				B664A4B8278E0F3400A37B6C /* TextFiledComponent.swift in Sources */,
 				B61A31C7278CB1030008D48F /* ContentView.swift in Sources */,
 				B61A31C5278CB1030008D48F /* MeediesApp.swift in Sources */,
 				B664A4B6278E0A6700A37B6C /* ButtonComponent.swift in Sources */,
