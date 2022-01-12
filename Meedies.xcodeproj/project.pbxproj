@@ -20,6 +20,7 @@
 		B664A4B8278E0F3400A37B6C /* TextFiledComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B664A4B7278E0F3400A37B6C /* TextFiledComponent.swift */; };
 		B6B8511E278F291F007E9451 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B6B8511D278F291F007E9451 /* FirebaseAuth */; };
 		B6B85120278F3912007E9451 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6B8511F278F3912007E9451 /* GoogleService-Info.plist */; };
+		B6B85122278F4C07007E9451 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B85121278F4C07007E9451 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B664A4B5278E0A6700A37B6C /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		B664A4B7278E0F3400A37B6C /* TextFiledComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFiledComponent.swift; sourceTree = "<group>"; };
 		B6B8511F278F3912007E9451 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B6B85121278F4C07007E9451 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				B61A31D9278CB2C50008D48F /* Managers */,
 				B61A31C4278CB1030008D48F /* MeediesApp.swift */,
 				B61A31C6278CB1030008D48F /* ContentView.swift */,
+				B6B85121278F4C07007E9451 /* ProfileView.swift */,
 				B61A31C8278CB1040008D48F /* Assets.xcassets */,
 				B61A31CD278CB1040008D48F /* Persistence.swift */,
 				B61A31CF278CB1040008D48F /* Meedies.xcdatamodeld */,
@@ -196,6 +199,7 @@
 			files = (
 				B61A31D1278CB1040008D48F /* Meedies.xcdatamodeld in Sources */,
 				B61A31DB278CB2DB0008D48F /* ImagePickerManager.swift in Sources */,
+				B6B85122278F4C07007E9451 /* ProfileView.swift in Sources */,
 				B61A31CE278CB1040008D48F /* Persistence.swift in Sources */,
 				B61A31E0278CC0A20008D48F /* GradientForeground.swift in Sources */,
 				B61A31DD278CB2F90008D48F /* VisualEffectBlur.swift in Sources */,

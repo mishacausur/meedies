@@ -15,6 +15,7 @@ struct ContentView: View {
     @State private var isTappedPasswordField = false
     @State private var isEditEmailField = false
     @State private var isEditPasswordField = false
+    @State private var showProfile = false
     var body: some View {
         ZStack {
             Image("backgroundMax")
@@ -32,7 +33,14 @@ struct ContentView: View {
                     TextFieldComponent(isTapped: $isTappedEmailField, isEdit: $isEditEmailField, text: $email, iconName: "envelope", fieldName: "Email")
                     TextFieldComponent(isTapped: $isTappedPasswordField, isEdit: $isEditPasswordField, text: $password, iconName: "key", fieldName: "Password")
                     ButtonComponent(title: "Create account") {
-                        
+                        signup()
+                    }
+                    .onAppear {
+                        Auth.auth().addStateDidChangeListener { auth, user in
+                            if user != nil {
+                                showProfile.toggle()
+                            }
+                        }
                     }
                     Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy.")
                         .font(.footnote)
@@ -67,6 +75,10 @@ struct ContentView: View {
                 RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(Color.white).opacity(0.7))
             .padding(.horizontal, 10)
         }
+        .fullScreenCover(isPresented: $showProfile) {
+            ProfileView()
+        }
+                        
     }
     
     func signup() {
