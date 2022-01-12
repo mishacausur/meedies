@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ButtonComponent: View {
     @State private var angle: Double = 180.0
+    var title: String
+    var action: () -> Void
     var body: some View {
         Button {
-            print("tapped")
+            action()
         } label: {
             GeometryReader { geometry in
                 ZStack {
@@ -29,7 +31,7 @@ struct ButtonComponent: View {
                                 self.angle += 350
                             }
                         }
-                    Text("Sign in")
+                    Text(title)
                         .font(.headline.weight(.heavy))
                         .foregroundColor(.white.opacity(0.7))
                         .frame(height: 42)
@@ -48,6 +50,8 @@ struct ButtonComponent: View {
 
 struct ButtonComponent_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonComponent()
+        ButtonComponent(title: "Title") {
+            
+        }
     }
 }

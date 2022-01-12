@@ -32,9 +32,7 @@ struct TextFieldComponent: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                         isEdit.toggle()
                     }
-                    
                 }
-                
             }
             .colorScheme(.dark)
             .foregroundColor(.white.opacity(0.8))
