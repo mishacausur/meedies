@@ -46,29 +46,85 @@ struct ContentView: View {
                             }
                         }
                     }
-                    Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy.")
-                        .font(.footnote)
-                        .foregroundColor(.white.opacity(0.7))
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(.white.opacity(0.1))
-                    VStack(alignment: .leading, spacing: 16) {
-                        Button {
-                            withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {
-                                self.signinToggle.toggle()
-                            }
-                           
-                        } label: {
-                            HStack {
-                                Text("Already have an account?")
-                                    .font(.footnote)
-                                    .foregroundColor(.white.opacity(0.7))
-                                Text("Sign in")
-                                    .font(.footnote.bold())
-                                    .gradientForeground(colors: [Color("pink-gradient-1"), Color("pink-gradient-2")])
+                    if signinToggle {
+                        Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy.")
+                            .font(.footnote)
+                            .foregroundColor(.white.opacity(0.7))
+                        Rectangle()
+                            .frame(height: 1)
+                            .foregroundColor(.white.opacity(0.1))
+                        VStack(alignment: .leading, spacing: 16) {
+                            Button {
+                                withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {
+                                    self.signinToggle.toggle()
+                                }
+                               
+                            } label: {
+                                HStack {
+                                    Text("Already have an account?")
+                                        .font(.footnote)
+                                        .foregroundColor(.white.opacity(0.7))
+                                    Text("Sign in")
+                                        .font(.footnote.bold())
+                                        .gradientForeground(colors: [Color("pink-gradient-1"), Color("pink-gradient-2")])
+                                }
                             }
                         }
+                    } else {
+//                        Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy.")
+//                            .font(.footnote)
+//                            .foregroundColor(.white.opacity(0.7))
+//                        Rectangle()
+//                            .frame(height: 1)
+//                            .foregroundColor(.white.opacity(0.1))
+                        VStack(alignment: .leading, spacing: 16) {
+                            Button {
+                                withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {
+                                    self.signinToggle.toggle()
+                                }
+                               
+                            } label: {
+                                HStack {
+                                    Text("Don't have an account?")
+                                        .font(.footnote)
+                                        .foregroundColor(.white.opacity(0.7))
+                                    Text("Sign un")
+                                        .font(.footnote.bold())
+                                        .gradientForeground(colors: [Color("pink-gradient-1"), Color("pink-gradient-2")])
+                                }
+                            }
+                            Button {
+                                withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {
+                                    print("RESET")
+                                }
+                               
+                            } label: {
+                                HStack {
+                                    Text("Forgot password?")
+                                        .font(.footnote)
+                                        .foregroundColor(.white.opacity(0.7))
+                                    Text("Reset password")
+                                        .font(.footnote.bold())
+                                        .gradientForeground(colors: [Color("pink-gradient-1"), Color("pink-gradient-2")])
+                                }
+                            }
+                            
+                            Rectangle()
+                                .frame(height: 1)
+                                .foregroundColor(.white.opacity(0.1))
+                            
+                            
+                        }
+                        Button {
+                            print("sign in with apple")
+                        } label: {
+                            SignAppleButtinComponent()
+                                .frame(height: 42)
+                                .cornerRadius(30)
+                        }
+
                     }
+                  
                 }
                 .padding(20)
             }
