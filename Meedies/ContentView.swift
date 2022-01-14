@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseAuth
+import AudioToolbox
 
 struct ContentView: View {
     @State private var email = ""
@@ -17,6 +18,8 @@ struct ContentView: View {
     @State private var isEditPasswordField = false
     @State private var showProfile = false
     @State private var signinToggle = true
+    
+    let generator = UISelectionFeedbackGenerator()
     var body: some View {
         ZStack {
             Image(signinToggle ? "backgroundMax" : "backgroundMax2")
