@@ -108,7 +108,21 @@ struct ContentView: View {
                                         .gradientForeground(colors: [Color("pink-gradient-1"), Color("pink-gradient-2")])
                                 }
                             }
+                            
+                            Rectangle()
+                                .frame(height: 1)
+                                .foregroundColor(.white.opacity(0.1))
+                            
+                            
                         }
+                        Button {
+                            print("sign in with apple")
+                        } label: {
+                            SignAppleButtinComponent()
+                                .frame(height: 42)
+                                .cornerRadius(30)
+                        }
+
                     }
                   
                 }
