@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AudioToolbox
 
 struct TextFieldComponent: View {
     @Binding var isTapped: Bool
@@ -13,6 +14,7 @@ struct TextFieldComponent: View {
     @Binding var text: String
     var iconName: String
     var fieldName: String
+    let generator = UISelectionFeedbackGenerator()
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: iconName)
@@ -26,6 +28,7 @@ struct TextFieldComponent: View {
             TextField(fieldName, text: $text) { isEditing in
                 isTapped = isEditing
                 if isEditing {
+                    generator.selectionChanged()
                     withAnimation(.spring(response: 0.3, dampingFraction: 0.4, blendDuration: 0.5)) {
                         isEdit.toggle()
                     }

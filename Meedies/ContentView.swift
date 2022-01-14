@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseAuth
+import AudioToolbox
 
 struct ContentView: View {
     @State private var email = ""
@@ -16,15 +17,18 @@ struct ContentView: View {
     @State private var isEditEmailField = false
     @State private var isEditPasswordField = false
     @State private var showProfile = false
+    @State private var signinToggle = true
+    
+    let generator = UISelectionFeedbackGenerator()
     var body: some View {
         ZStack {
-            Image("backgroundMax")
+            Image(signinToggle ? "backgroundMax" : "backgroundMax2")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 VStack(alignment: .leading, spacing: 16) {
-                    Text("Sign up")
+                    Text(signinToggle ? "Sign up" : "Sign in")
                         .font(.title.bold())
                         .foregroundColor(.white)
                     Text("Get the all new data from around the world in the one place")
@@ -32,7 +36,7 @@ struct ContentView: View {
                         .foregroundColor(.white).opacity(0.7)
                     TextFieldComponent(isTapped: $isTappedEmailField, isEdit: $isEditEmailField, text: $email, iconName: "envelope", fieldName: "Email")
                     TextFieldComponent(isTapped: $isTappedPasswordField, isEdit: $isEditPasswordField, text: $password, iconName: "key", fieldName: "Password")
-                    ButtonComponent(title: "Create account") {
+                    ButtonComponent(title: signinToggle ? "Create account" : "Sign in") {
                         signup()
                     }
                     .onAppear {
@@ -50,7 +54,10 @@ struct ContentView: View {
                         .foregroundColor(.white.opacity(0.1))
                     VStack(alignment: .leading, spacing: 16) {
                         Button {
-                            print("switched")
+                            withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {
+                                self.signinToggle.toggle()
+                            }
+                           
                         } label: {
                             HStack {
                                 Text("Already have an account?")
