@@ -10,7 +10,14 @@ import FirebaseAuth
 import AudioToolbox
 
 struct ContentView: View {
-    @State private var email = ""
+    @State private var email = "" {
+        didSet {
+            guard email != oldValue else {
+                return
+            }
+            email = email.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+    }
     @State private var password = ""
     @State private var isTappedEmailField = false
     @State private var isTappedPasswordField = false
@@ -71,12 +78,6 @@ struct ContentView: View {
                             }
                         }
                     } else {
-//                        Text("By clicking on Sign up, you agree to our Terms of service and Privacy policy.")
-//                            .font(.footnote)
-//                            .foregroundColor(.white.opacity(0.7))
-//                        Rectangle()
-//                            .frame(height: 1)
-//                            .foregroundColor(.white.opacity(0.1))
                         VStack(alignment: .leading, spacing: 16) {
                             Button {
                                 withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {
