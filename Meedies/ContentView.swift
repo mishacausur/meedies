@@ -25,6 +25,9 @@ struct ContentView: View {
     @State private var isEditPasswordField = false
     @State private var showProfile = false
     @State private var signinToggle = true
+    @State private var showAlertView = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
     
     let generator = UISelectionFeedbackGenerator()
     var body: some View {
@@ -89,14 +92,14 @@ struct ContentView: View {
                                     Text("Don't have an account?")
                                         .font(.footnote)
                                         .foregroundColor(.white.opacity(0.7))
-                                    Text("Sign un")
+                                    Text("Sign up")
                                         .font(.footnote.bold())
                                         .gradientForeground(colors: [Color("pink-gradient-1"), Color("pink-gradient-2")])
                                 }
                             }
                             Button {
                                 withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {
-                                    print("RESET")
+                                    resetPasswordEmail()
                                 }
                                
                             } label: {
@@ -138,24 +141,46 @@ struct ContentView: View {
             .background(
                 RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(Color.white).opacity(0.7))
             .padding(.horizontal, 10)
+            
         }
-        .fullScreenCover(isPresented: $showProfile) {
-            ProfileView()
+//        .fullScreenCover(isPresented: $showProfile) {
+//            ProfileView()
+//        }
+        .alert(isPresented: $showAlertView) {
+            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .cancel())
         }
-                        
     }
     
     func signup() {
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            guard error == nil else { return }
-            
+        if signinToggle {
+            Auth.auth().createUser(withEmail: email, password: password) { result, error in
+                guard error == nil else { alertTitle = "Something goes wrong"
+                    alertMessage = error!.localizedDescription
+                    showAlertView.toggle()
+                    return
+                }
+            }
+        } else {
+            Auth.auth().signIn(withEmail: email, password: password) { result, error in
+                guard error == nil else { alertTitle = "Something goes wrong"
+                    alertMessage = error!.localizedDescription
+                    showAlertView.toggle()
+                    return
+                }
+            }
         }
     }
-    
     func resetPasswordEmail() {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
-            guard error == nil else { print(error?.localizedDescription); return }
-            print("resent")
+            guard error == nil else {
+                alertTitle = "Something goes wrong"
+                alertMessage = error!.localizedDescription
+                showAlertView.toggle()
+                return
+            }
+            alertTitle = "Check your email"
+            alertMessage = "Reset your password"
+            showAlertView.toggle()
         }
     }
 }
