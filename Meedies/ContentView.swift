@@ -92,7 +92,7 @@ struct ContentView: View {
                                     Text("Don't have an account?")
                                         .font(.footnote)
                                         .foregroundColor(.white.opacity(0.7))
-                                    Text("Sign un")
+                                    Text("Sign up")
                                         .font(.footnote.bold())
                                         .gradientForeground(colors: [Color("pink-gradient-1"), Color("pink-gradient-2")])
                                 }
@@ -152,12 +152,24 @@ struct ContentView: View {
     }
     
     func signup() {
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            guard error == nil else { return }
-            
+        if signinToggle {
+            Auth.auth().createUser(withEmail: email, password: password) { result, error in
+                guard error == nil else { alertTitle = "Something goes wrong"
+                    alertMessage = error!.localizedDescription
+                    showAlertView.toggle()
+                    return
+                }
+            }
+        } else {
+            Auth.auth().signIn(withEmail: email, password: password) { result, error in
+                guard error == nil else { alertTitle = "Something goes wrong"
+                    alertMessage = error!.localizedDescription
+                    showAlertView.toggle()
+                    return
+                }
+            }
         }
     }
-    
     func resetPasswordEmail() {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             guard error == nil else {
