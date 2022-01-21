@@ -151,6 +151,13 @@ struct ContentView: View {
             
         }
     }
+    
+    func resetPasswordEmail() {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            guard error == nil else { print(error?.localizedDescription); return }
+            print("resent")
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
