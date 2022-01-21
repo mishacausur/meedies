@@ -25,6 +25,9 @@ struct ContentView: View {
     @State private var isEditPasswordField = false
     @State private var showProfile = false
     @State private var signinToggle = true
+    @State private var showAlertView = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
     
     let generator = UISelectionFeedbackGenerator()
     var body: some View {
@@ -138,11 +141,14 @@ struct ContentView: View {
             .background(
                 RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(Color.white).opacity(0.7))
             .padding(.horizontal, 10)
+            
         }
-        .fullScreenCover(isPresented: $showProfile) {
-            ProfileView()
+//        .fullScreenCover(isPresented: $showProfile) {
+//            ProfileView()
+//        }
+        .alert(isPresented: $showAlertView) {
+            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .cancel())
         }
-                        
     }
     
     func signup() {
@@ -154,8 +160,15 @@ struct ContentView: View {
     
     func resetPasswordEmail() {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
-            guard error == nil else { print(error?.localizedDescription); return }
-            print("resent")
+            guard error == nil else {
+                alertTitle = "Something goes wrong"
+                alertMessage = error!.localizedDescription
+                showAlertView.toggle()
+                return
+            }
+            alertTitle = "Check your email"
+            alertMessage = "Reset your password"
+            showAlertView.toggle()
         }
     }
 }
