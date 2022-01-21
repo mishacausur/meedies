@@ -99,7 +99,7 @@ struct ContentView: View {
                             }
                             Button {
                                 withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {
-                                    print("RESET")
+                                    resetPasswordEmail()
                                 }
                                
                             } label: {
