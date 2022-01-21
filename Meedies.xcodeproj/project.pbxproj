@@ -22,6 +22,8 @@
 		B6B85120278F3912007E9451 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6B8511F278F3912007E9451 /* GoogleService-Info.plist */; };
 		B6B85122278F4C07007E9451 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B85121278F4C07007E9451 /* ProfileView.swift */; };
 		B6B85126279201F9007E9451 /* SignInWAppleButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B85125279201F9007E9451 /* SignInWAppleButtonComponent.swift */; };
+		B6B851292792D03B007E9451 /* TrimmedWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B851282792D03B007E9451 /* TrimmedWrapper.swift */; };
+		B6B8512B2792D1DB007E9451 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B8512A2792D1DB007E9451 /* Defaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		B6B85121278F4C07007E9451 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B6B85125279201F9007E9451 /* SignInWAppleButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWAppleButtonComponent.swift; sourceTree = "<group>"; };
 		B6B8512727920495007E9451 /* Meedies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Meedies.entitlements; sourceTree = "<group>"; };
+		B6B851282792D03B007E9451 /* TrimmedWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimmedWrapper.swift; sourceTree = "<group>"; };
+		B6B8512A2792D1DB007E9451 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				B61A31CD278CB1040008D48F /* Persistence.swift */,
 				B61A31CF278CB1040008D48F /* Meedies.xcdatamodeld */,
 				B6B8511F278F3912007E9451 /* GoogleService-Info.plist */,
+				B6B8512C2792D2AF007E9451 /* PropertyWrappersTest */,
 				B61A31CA278CB1040008D48F /* Preview Content */,
 			);
 			path = Meedies;
@@ -103,6 +108,8 @@
 			children = (
 				B61A31DA278CB2DB0008D48F /* ImagePickerManager.swift */,
 				B61A31DC278CB2F90008D48F /* VisualEffectBlur.swift */,
+				B6B851282792D03B007E9451 /* TrimmedWrapper.swift */,
+				B6B8512A2792D1DB007E9451 /* Defaults.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -123,6 +130,13 @@
 				B6B85125279201F9007E9451 /* SignInWAppleButtonComponent.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		B6B8512C2792D2AF007E9451 /* PropertyWrappersTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PropertyWrappersTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B61A31D1278CB1040008D48F /* Meedies.xcdatamodeld in Sources */,
+				B6B8512B2792D1DB007E9451 /* Defaults.swift in Sources */,
 				B61A31DB278CB2DB0008D48F /* ImagePickerManager.swift in Sources */,
+				B6B851292792D03B007E9451 /* TrimmedWrapper.swift in Sources */,
 				B6B85122278F4C07007E9451 /* ProfileView.swift in Sources */,
 				B61A31CE278CB1040008D48F /* Persistence.swift in Sources */,
 				B61A31E0278CC0A20008D48F /* GradientForeground.swift in Sources */,
@@ -344,7 +360,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Meedies/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JKYU7W8LBP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -374,7 +390,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Meedies/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JKYU7W8LBP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
